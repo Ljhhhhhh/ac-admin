@@ -47,10 +47,11 @@ class CardController {
 module.exports = CardController;
 
 const getRandomNum = type => {
-  const chars = type === 'pwd' ? "ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678" : '1234567890';
+  // ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678 如果需要英文
+  const chars = type === 'pwd' ? "1234567890" : '1234567890';
   var maxPos = chars.length;
   var pwd = "";
-  for (i = 0; i < 12; i++) {
+  for (i = 0; i < 8; i++) {
     pwd += chars.charAt(Math.floor(Math.random() * maxPos));
   }
   return pwd;

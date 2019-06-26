@@ -10,7 +10,7 @@ const Customer = new Schema({
     require: true
   },
   sex: {
-    type: Boolean,
+    type: Number,
     default: 0
   },
   pwd: {
@@ -21,13 +21,13 @@ const Customer = new Schema({
     type: String,
     require: true
   },
-  token: {
-    type: String,
-    default: '',
-  },
   create_time: {
     type: Number,
     default: Date.now()
+  },
+  exp_time: {
+    type: Number,
+    default: 0
   }
 })
 

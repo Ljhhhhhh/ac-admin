@@ -12,6 +12,7 @@ const dbConfig = require('./model/config')
 const index = require('./routes/index')
 const users = require('./routes/users')
 const card = require('./routes/card')
+const customer = require('./routes/customer')
 
 // error handler
 onerror(app)
@@ -47,6 +48,7 @@ app.use(async (ctx, next) => {
 app.use(index.routes(), index.allowedMethods())
 app.use(users.routes(), users.allowedMethods())
 app.use(card.routes(), card.allowedMethods())
+app.use(customer.routes(), customer.allowedMethods())
 
 // error-handling
 app.on('error', (err, ctx) => {
